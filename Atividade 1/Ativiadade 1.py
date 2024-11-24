@@ -47,7 +47,19 @@ def detalhes (dataf):
 
 lista = []
 lista = wine_quality_concat['quality']
-lista.value_counts()
+##lista.value_counts()
 
 
-wine_quality_concat.shape[1]
+##wine_quality_concat.shape[1]
+
+def make_heatmap(dataf):
+    sns.heatmap(dataf.corr(), annot = True, cmap='coolwarm', fmt = '.2f')
+    plt.show()
+    
+##make_heatmap(wine_quality_concat)
+
+def make_boxplot(dataf):
+    sns.boxplot(data = dataf, width=0.5)
+    plt.show()
+    
+make_boxplot(wine_quality_concat)
